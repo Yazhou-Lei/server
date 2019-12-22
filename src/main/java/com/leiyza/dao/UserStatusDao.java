@@ -27,6 +27,15 @@ public class UserStatusDao {
             sqlSession.update("updateUserStatus",param);
         }
     }
+    public void updateUserLoginStaus(String userNo,String status){
+        Map<String,Object>param=new HashMap<>();
+        param.put("userNo",userNo);
+        param.put("status",status);
+        UserStatus userStatus=getUserStatusByUserNo(userNo);
+        if(userStatus!=null){
+            sqlSession.update("updateUserStatus",param);
+        }
+    }
     public UserStatus getUserStatusByUserNo(String userNo){
         return sqlSession.selectOne("getUserStatusByUserNo",userNo);
     }

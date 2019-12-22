@@ -1,35 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b6a5e638-3e3a-40f6-86c3-2d396bb68b29" name="Default Changelist" comment="" />
+    <list default="true" id="abac9791-662b-471a-b37f-37750731d0a7" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/$PRODUCT_WORKSPACE_FILE$" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/$PRODUCT_WORKSPACE_FILE$" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/PC.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/leiyza/cache/ThreadPool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/leiyza/cache/ThreadPool.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/leiyza/communicate/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/leiyza/communicate/Message.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/leiyza/dao/UserStatusDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/leiyza/dao/UserStatusDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/leiyza/server/ClientThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/leiyza/server/ClientThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/leiyza/server/Commands.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/leiyza/server/Commands.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/leiyza/server/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/leiyza/server/Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/leiyza/server/ServiceProcess.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/leiyza/server/ServiceProcess.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/applicationContext.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/userMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/userMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/userStatusMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/userStatusMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/server.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/applicationContext.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/leiyza/cache/ThreadPool.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/leiyza/cache/ThreadPool.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/leiyza/communicate/Message$FileMessage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/leiyza/communicate/Message$FileMessage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/leiyza/communicate/Message$ImageMessage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/leiyza/communicate/Message$ImageMessage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/leiyza/communicate/Message$MessageHead.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/leiyza/communicate/Message$MessageHead.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/leiyza/communicate/Message$TextMessage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/leiyza/communicate/Message$TextMessage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/leiyza/communicate/Message.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/leiyza/communicate/Message.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/leiyza/dao/UserStatusDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/leiyza/dao/UserStatusDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/leiyza/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/leiyza/model/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/leiyza/server/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/leiyza/server/Client.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/leiyza/server/ClientOnlineList.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/leiyza/server/ClientOnlineList.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/leiyza/server/ClientThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/leiyza/server/ClientThread.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/leiyza/server/Commands.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/leiyza/server/Commands.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/leiyza/server/Server.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/leiyza/server/Server.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/leiyza/server/ServiceProcess.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/leiyza/server/ServiceProcess.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapper/userMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/userMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapper/userStatusMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/userStatusMapper.xml" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="DatabaseView">
-    <option name="SHOW_INTERMEDIATE" value="true" />
-    <option name="GROUP_DATA_SOURCES" value="true" />
-    <option name="GROUP_SCHEMA" value="true" />
-    <option name="GROUP_CONTENTS" value="false" />
-    <option name="SORT_POSITIONED" value="false" />
-    <option name="SHOW_EMPTY_GROUPS" value="false" />
-    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
-    <option name="HIDDEN_KINDS">
-      <set />
-    </option>
-    <expand />
-    <select />
-  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="FxmlFile" />
-        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -41,26 +67,19 @@
     </option>
     <option name="importingSettings">
       <MavenImportingSettings>
-        <option name="importAutomatically" value="true" />
+        <option name="jdkForImporter" value="1.7" />
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectId" id="1U9jDCeanZeIsN6fZvKwUBVAbI6" />
+  <component name="ProjectId" id="1VK3A2WhouB2JIbN1xQzlTACA0I" />
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../client" />
-    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
-    <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/src/main/java/com/leiyza/communicate/UserDao.java" />
-  </component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\JavaLearning\leiyz\server\src\main\resources\mapper" />
-      <recent name="E:\JavaLearning\leiyz\server\src\main\resources" />
-    </key>
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -99,68 +118,67 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="b6a5e638-3e3a-40f6-86c3-2d396bb68b29" name="Default Changelist" comment="" />
-      <created>1574775582752</created>
+      <changelist id="abac9791-662b-471a-b37f-37750731d0a7" name="Default Changelist" comment="" />
+      <created>1576987811416</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1574775582752</updated>
-      <workItem from="1574775585506" duration="5734000" />
-      <workItem from="1576158329859" duration="596000" />
-      <workItem from="1576235832742" duration="591000" />
-      <workItem from="1576504901506" duration="1388000" />
-      <workItem from="1576589297114" duration="652000" />
-      <workItem from="1576676056183" duration="3223000" />
-      <workItem from="1576683690501" duration="5968000" />
-      <workItem from="1576761648997" duration="15774000" />
-      <workItem from="1576841237740" duration="18444000" />
-      <workItem from="1576905862614" duration="27949000" />
-      <workItem from="1576949786875" duration="20000" />
+      <updated>1576987811416</updated>
+      <workItem from="1576987812731" duration="18715000" />
+      <workItem from="1577009103572" duration="14636000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/leiyza/dao/UserStatusDao.java</url>
-          <line>23</line>
-          <option name="timeStamp" value="29" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/leiyza/dao/UserStatusDao.java</url>
-          <line>30</line>
-          <option name="timeStamp" value="31" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/leiyza/server/ServiceProcess.java</url>
-          <line>65</line>
-          <option name="timeStamp" value="34" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
+        <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/leiyza/server/ClientThread.java</url>
           <line>35</line>
-          <option name="timeStamp" value="36" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/leiyza/cache/ThreadPool.java</url>
-          <line>45</line>
-          <option name="timeStamp" value="37" />
+          <option name="timeStamp" value="7" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/leiyza/server/ServiceProcess.java</url>
-          <line>69</line>
-          <option name="timeStamp" value="39" />
+          <line>136</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/leiyza/cache/MsgWaitForUserToGetCacheMap.java</url>
+          <line>20</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/leiyza/cache/MsgWaitForUserToGetCacheMap.java</url>
+          <line>36</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/leiyza/cache/MsgWaitForUserToGetCacheMap.java</url>
+          <line>29</line>
+          <option name="timeStamp" value="14" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/com/leiyza/cache/ThreadPool.java</url>
-          <line>44</line>
-          <properties class="com.leiyza.cache.ThreadPool" method="getClientThread">
+          <url>file://$PROJECT_DIR$/src/main/java/com/leiyza/cache/MsgWaitForUserToGetCacheMap.java</url>
+          <line>34</line>
+          <properties class="com.leiyza.cache.MsgWaitForUserToGetCacheMap" method="getMessages">
             <option name="EMULATED" value="true" />
           </properties>
-          <option name="timeStamp" value="38" />
+          <option name="timeStamp" value="12" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

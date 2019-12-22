@@ -4,6 +4,12 @@ package com.leiyza.communicate;
 import com.leiyza.model.User;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentLinkedQueue;
 
 public class Message implements Serializable {
     private static final long serialVersionUID = 6L;
@@ -11,6 +17,7 @@ public class Message implements Serializable {
     private TextMessage textMessage;
     private ImageMessage imageMessage;
     private FileMessage fileMessage;
+    private RelationArrays relationArrays;
     private boolean isMsgNull;
     public Message(){
         messageHead=new MessageHead();
@@ -57,6 +64,15 @@ public class Message implements Serializable {
     public void setMsgNull(boolean msgNull) {
         isMsgNull = msgNull;
     }
+
+    public RelationArrays getRelationArrays() {
+        return relationArrays;
+    }
+
+    public void setRelationArrays(RelationArrays relationArrays) {
+        this.relationArrays = relationArrays;
+    }
+
 
 
     public static class MessageHead implements Serializable {
@@ -116,8 +132,36 @@ public class Message implements Serializable {
     }
     public static class FileMessage implements Serializable {
         private static final long serialVersionUID = 4L;
+    }
+    public static class RelationArrays implements Serializable{
+        private static final long serialVersionUID=-1L;
+        private HashMap<User,ConcurrentLinkedQueue<Message>> friendArray;
+        private HashMap<User,ConcurrentLinkedQueue<Message>>strangerArray;
+        private HashMap<User,ConcurrentLinkedQueue<Message>>blackArray;
 
+        public HashMap<User, ConcurrentLinkedQueue<Message>> getFriendArray() {
+            return friendArray;
+        }
 
+        public void setFriendArray(HashMap<User, ConcurrentLinkedQueue<Message>> friendArray) {
+            this.friendArray = friendArray;
+        }
+
+        public HashMap<User, ConcurrentLinkedQueue<Message>> getStrangerArray() {
+            return strangerArray;
+        }
+
+        public void setStrangerArray(HashMap<User, ConcurrentLinkedQueue<Message>> strangerArray) {
+            this.strangerArray = strangerArray;
+        }
+
+        public HashMap<User, ConcurrentLinkedQueue<Message>> getBlackArray() {
+            return blackArray;
+        }
+
+        public void setBlackArray(HashMap<User, ConcurrentLinkedQueue<Message>> blackArray) {
+            this.blackArray = blackArray;
+        }
     }
 
 }

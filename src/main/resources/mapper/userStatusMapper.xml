@@ -17,16 +17,18 @@
     </select>
 
     <update id="updateUserStatus" parameterType="java.util.HashMap">
-        update USER_STATUS set
-        <if test="address!=null and address.length()>0">
-            address=#{address},
-        </if>
-        <if test="status!=null and status.length()>0">
-            status=#{status},
-        </if>
-        <if test="loginTime!=null and loginTime.length()>0">
-            loginTime=#{loginTime}
-        </if>
+        update USER_STATUS
+        <trim prefix="set" suffixOverrides=",">
+            <if test="address!=null and address.length()>0">
+                address=#{address},
+            </if>
+            <if test="status!=null and status.length()>0">
+                status=#{status},
+            </if>
+            <if test="loginTime!=null and loginTime.length()>0">
+                loginTime=#{loginTime},
+            </if>
+        </trim>
         where userNo=#{userNo}
 
     </update>

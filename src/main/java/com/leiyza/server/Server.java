@@ -1,6 +1,7 @@
 package com.leiyza.server;
 import com.leiyza.cache.ThreadPool;
 import com.leiyza.communicate.Message;
+import com.leiyza.communicate.ProcessTalkingThread;
 import com.leiyza.exception.BusiException;
 import com.leiyza.utils.SpringUtils;
 import org.apache.log4j.Logger;
@@ -22,6 +23,9 @@ public class Server {
     static int clientNum=0;
     public void startServer() throws IOException, ClassNotFoundException {
         ss = new ServerSocket(TCP_PORT);
+        ProcessTalkingThread processTalkingThread=new ProcessTalkingThread();
+        processTalkingThread.start();
+        logger.info("服务器已建立,消息转发线程已启动");
         while (true) {
             logger.info("服务器已启动正在等待连接...");
             Socket s = ss.accept();

@@ -32,14 +32,17 @@ public class ThreadPool {
     public synchronized void decreaseThreadCount(){
         threadCount--;
     }
-    public synchronized boolean remove(String threadName){
-        if(threadCount<=0){
-            return false;
-        }else {
-            pool.get(threadName).getClient().status=false;//结束线程
-            pool.remove(threadName);//从线程池中移除
-            threadCount--;
-            return true;
+    public synchronized void remove(String threadName){
+        if(pool.containsKey(threadName)){
+            logger.info("线程池中存在线程"+threadName);
+            if(pool.get(threadName).isAlive()){
+                logger.info("线程"+threadName+"仍处于活动状态");
+                pool.remove(threadName);
+                logger.info("线程"+threadName+"已移除");
+            }else {
+                pool.remove(threadName);
+                logger.info("线程"+threadName+"已移除");
+            }
         }
     }
     public ClientThread getClientThread(String threadName){

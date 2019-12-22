@@ -1,9 +1,10 @@
 package com.leiyza.server;
 
+import com.leiyza.cache.MsgWaitForUserToGetCacheMap;
 import com.leiyza.cache.ThreadPool;
 import com.leiyza.communicate.Message;
-import com.leiyza.dao.UserDao;
-import com.leiyza.dao.UserStatusDao;
+import com.leiyza.communicate.MessageQueue;
+import com.leiyza.dao.*;
 import com.leiyza.exception.BusiException;
 import com.leiyza.model.User;
 import com.leiyza.model.UserStatus;
@@ -16,12 +17,22 @@ import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.concurrent.ConcurrentLinkedQueue;
 
 @Service
 public class ServiceProcess {
     @Resource
     private UserDao userDao;
+    @Resource
+    private UserFriendDao userFriendDao;
+    @Resource
+    private UserStrangerDao userStrangerDao;
+    @Resource
+    private UserBlackDao userBlackDao;
     @Resource
     private UserStatusDao userStatusDao;
     private Client client;
@@ -42,7 +53,7 @@ public class ServiceProcess {
                 register(message.getMessageHead().getFrom());
                 break;
             case Commands.TALKING:
-                talking();
+                talking(message);
                 break;
             default:
                 break;
@@ -68,16 +79,21 @@ public class ServiceProcess {
                     SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
                     changeUserStatus(client.user.getUserNo(),"online",String.valueOf(client.socket.getInetAddress()).substring(1)+":"+client.socket.getPort(),df.format(new Date()));
                     ClientThread clientThread=ThreadPool.getInstance().getClientThread(userStatus.getAddress());
-                    if(clientThread!=null){
+                    if(clientThread!=null&&clientThread.isAlive()){
                         logger.info("正在尝试关闭线程:"+clientThread.getName());
-                        while (clientThread.stopMe()) {
+                        clientThread.stopMe();
+                        while (!clientThread.isStopped()){
                         }
-                        ThreadPool.getInstance().remove(userStatus.getAddress());
+                        logger.info("运行到这里了");
+                        ThreadPool.getInstance().remove(clientThread.getName());
                     }
+                    client.user=dbUser;
                     messageHead.setSuccessFlag(true);
                     ClientOnlineList.getInstance().put(client);
                     textMessage.setMessageContent("登录成功");
                     messageHead.setFrom(dbUser);
+                    //登录成功后需要初始化好友、陌生人、黑名单列表
+                    message.setRelationArrays(getRelationArrays(dbUser));
                 }else {//离线状态
                     client.user=dbUser;
                     SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
@@ -86,6 +102,8 @@ public class ServiceProcess {
                     ClientOnlineList.getInstance().put(client);
                     textMessage.setMessageContent("登录成功");
                     messageHead.setFrom(dbUser);
+                    //登录成功后需要初始化好友、陌生人、黑名单列表以及未接收的消息
+                    message.setRelationArrays(getRelationArrays(dbUser));
                 }
             }else {
                 logger.info("match failed!");
@@ -97,6 +115,7 @@ public class ServiceProcess {
             messageHead.setSuccessFlag(false);
             textMessage.setMessageContent("用户不存在！");
         }
+        logger.info("登录状态:"+textMessage.getMessageContent());
         message.setTextMessage(textMessage);
         message.setMessageHead(messageHead);
         client.getOutputStream().writeObject(message);
@@ -104,6 +123,33 @@ public class ServiceProcess {
         if(!messageHead.isSuccessFlag()){
             throw SpringUtils.createException(textMessage.getMessageContent());
         }
+    }
+    public Message.RelationArrays getRelationArrays(User dbUser){
+        logger.info("获取好友、陌生人、黑名单列表 start...");
+        Message.RelationArrays relationArrays=new Message.RelationArrays();
+        ArrayList<User>friends=(ArrayList<User>) userFriendDao.getAllFriendByUserNo(dbUser.getUserNo());
+        ArrayList<User>strangers=(ArrayList<User>)userStrangerDao.getAllStrangerByUserNo(dbUser.getUserNo());
+        ArrayList<User>blacks=(ArrayList<User>)userBlackDao.getAllBlackByUserNo(dbUser.getUserNo());
+        for(User user:friends){//获取好友发给我的未接收的消息
+            ConcurrentLinkedQueue<Message> queue =MsgWaitForUserToGetCacheMap.getInstance().getMessages(dbUser.getUserNo());
+            HashMap<User,ConcurrentLinkedQueue<Message>> friendArray=new HashMap<>();
+            friendArray.put(user,queue);
+            relationArrays.setFriendArray(friendArray);
+        }
+        for(User user:strangers){//获取陌生人发给我的未接收的消息
+            ConcurrentLinkedQueue<Message> queue =MsgWaitForUserToGetCacheMap.getInstance().getMessages(dbUser.getUserNo());
+            HashMap<User,ConcurrentLinkedQueue<Message>> strangerArray=new HashMap<>();
+            strangerArray.put(user,queue);
+            relationArrays.setStrangerArray(strangerArray);
+        }
+        for(User user:blacks){//获取黑名单发给我的未接收的消息
+            ConcurrentLinkedQueue<Message> queue =MsgWaitForUserToGetCacheMap.getInstance().getMessages(dbUser.getUserNo());
+            HashMap<User,ConcurrentLinkedQueue<Message>> blackArray=new HashMap<>();
+            blackArray.put(user,queue);
+            relationArrays.setStrangerArray(blackArray);
+        }
+        logger.info("获取好友、陌生人、黑名单列表 end...");
+        return relationArrays;
     }
     public void register (User user) throws Exception{
         Message message=new Message();
@@ -145,7 +191,8 @@ public class ServiceProcess {
         userStatus.setLoginTime(loginTime);
         userStatusDao.updateUserLoginStatus(userStatus);
     }
-    public boolean talking(){
-        return true;
+    public void talking(Message message){
+        logger.info("将消息放进消息队列等待转发");
+        MessageQueue.messageQueue.add(message);
     }
 }

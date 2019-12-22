@@ -30,6 +30,9 @@ public class ClientThread extends Thread{
         while (client.status){
             Message message=null;
             try {
+                if(stopByOther){
+                    break;
+                }
                 message=(Message) client.getInputStream().readObject();
                 client.user=message.getMessageHead().getFrom();
                 logger.info(client.user.toString()+"  is online");
@@ -40,35 +43,22 @@ public class ClientThread extends Thread{
                     client.closeSocket();
                 }
             } catch (Exception e) {//若处理过程抛错，需要关闭socket退出当前线程
-                e.printStackTrace();
+                if(stopByOther){
+                    logger.info("通过关闭输入流抛出异常来关闭线程");
+                    break;
+                }
+                if(e instanceof java.net.SocketException){
+                    logger.info("客户端异常退出");
+                }
                 client.status=false;
                 client.closeSocket();
                 if(!SpringUtils.isNull(client.user)){
+                    UserStatusDao userStatusDao=(UserStatusDao) SpringUtils.getBean("userStatusDao");
+                    userStatusDao.updateUserLoginStaus(client.user.getUserNo(),"offline");
                     if(onlineList.isOnline(client.user.getUserNo())){
                         onlineList.remove(client.user.getUserNo());
                     }
                 }
-            }
-        }
-        if(stopByOther){
-            logger.info("账号在其他地方登录!");
-            Message message=new Message();
-            Message.MessageHead messageHead=new Message.MessageHead();
-            Message.TextMessage textMessage=new Message.TextMessage();
-            messageHead.setCommandType(Commands.ERROR);
-            messageHead.setFrom(client.user);
-            UserStatusDao userStatusDao=(UserStatusDao)SpringUtils.getBean("userStatusDao");
-            UserStatus userStatus=userStatusDao.getUserStatusByUserNo(client.user.getUserNo());
-            textMessage.setMessageContent("当前账号已在其他地方登录,登录ip为"+userStatus.getAddress());
-            message.setMessageHead(messageHead);
-            message.setTextMessage(textMessage);
-            try {
-                client.getOutputStream().writeObject(message);
-                client.getOutputStream().flush();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }finally {
-                client.closeSocket();
             }
         }
         onlineList.remove(client.user.getUserNo());
@@ -76,14 +66,42 @@ public class ClientThread extends Thread{
         client=null;//释放资源
         isStopped=true;
     }
-    public boolean stopMe(){
-        client.status=false;
+    public boolean stopMe() {
         stopByOther=true;
-        while (!isStopped){
+        logger.info("关闭线程...");
+        logger.info("账号在其他地方登录!");
+        Message message=new Message();
+        Message.MessageHead messageHead=new Message.MessageHead();
+        Message.TextMessage textMessage=new Message.TextMessage();
+        messageHead.setCommandType(Commands.STOPPED_BY_OTHER);
+        messageHead.setFrom(client.user);
+        UserStatusDao userStatusDao=(UserStatusDao)SpringUtils.getBean("userStatusDao");
+        UserStatus userStatus=userStatusDao.getUserStatusByUserNo(client.user.getUserNo());
+        logger.info("登录IP为:"+userStatus.getAddress());
+        textMessage.setMessageContent("当前账号已在其他地方登录,登录ip为"+userStatus.getAddress());
+        message.setMessageHead(messageHead);
+        message.setTextMessage(textMessage);
+        try {
+            client.getOutputStream().writeObject(message);
+            client.getOutputStream().flush();
+            logger.info("已通知用户，账号在其他地方登录");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }finally {
+            client.closeSocket();
         }
-        return true;
+        logger.info("stop success");
+        return false;
     }
     public Client getClient(){
         return client;
+    }
+
+    public boolean isStopped() {
+        return isStopped;
+    }
+
+    public void setStopped(boolean stopped) {
+        isStopped = stopped;
     }
 }
