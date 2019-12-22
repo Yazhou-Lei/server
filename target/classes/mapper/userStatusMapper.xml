@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.leiyza.dao.UserStatusDao">
+    <sql id="Columns">
+        userNo,
+        address,
+        status,
+        loginTime
+    </sql>
+    <insert id="insertUserStatus" parameterType="java.util.HashMap">
+        insert into USER_STATUS(userNo,address,status,loginTime)
+        value (#{userNo},#{address},#{status},#{loginTime})
+    </insert>
+    <select id="getUserStatusByUserNo" parameterType="java.lang.String" resultType="com.leiyza.model.UserStatus">
+        select <include refid="Columns"/> from USER_STATUS where userNo=#{userNo}
+    </select>
+
+    <update id="updateUserStatus" parameterType="java.util.HashMap">
+        update USER_STATUS set
+        <if test="address!=null and address.length()>0">
+            address=#{address},
+        </if>
+        <if test="status!=null and status.length()>0">
+            status=#{status},
+        </if>
+        <if test="loginTime!=null and loginTime.length()>0">
+            loginTime=#{loginTime}
+        </if>
+        where userNo=#{userNo}
+
+    </update>
+</mapper>
