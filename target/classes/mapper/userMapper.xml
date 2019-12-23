@@ -11,7 +11,7 @@
         select <include refid="Columns"/>
         from USER where userNo=#{userNo,jdbcType=VARCHAR}
     </select>
-    <insert id="insert" parameterType="java.util.HashMap">
+    <insert id="registerUser" parameterType="java.util.HashMap">
         insert into USER(userNo,userName,password)
          value (#{userNo},#{userName},#{passWord})
     </insert>

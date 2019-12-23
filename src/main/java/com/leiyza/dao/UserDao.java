@@ -21,7 +21,7 @@ public class UserDao {
         param.put("userNo",user.getUserNo());
         param.put("userName",user.getUserName());
         param.put("passWord",user.getPassword());
-        sqlSession.insert("insert",param);
+        sqlSession.insert("registerUser",param);
     }
     public User getUserByUserNo(String userNo){
         return sqlSession.selectOne("getUserByUserNo",userNo);

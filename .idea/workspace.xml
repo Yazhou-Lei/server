@@ -1,45 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="server:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="abac9791-662b-471a-b37f-37750731d0a7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/$PRODUCT_WORKSPACE_FILE$" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/$PRODUCT_WORKSPACE_FILE$" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/PC.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/leiyza/cache/ThreadPool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/leiyza/cache/ThreadPool.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/leiyza/communicate/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/leiyza/communicate/Message.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/leiyza/dao/UserStatusDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/leiyza/dao/UserStatusDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/leiyza/server/ClientThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/leiyza/server/ClientThread.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/leiyza/server/Commands.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/leiyza/server/Commands.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/leiyza/server/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/leiyza/server/Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/leiyza/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/leiyza/dao/UserDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/leiyza/server/ServiceProcess.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/leiyza/server/ServiceProcess.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/applicationContext.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/userMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/userMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/userStatusMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/userStatusMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/server.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/applicationContext.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/leiyza/cache/ThreadPool.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/leiyza/cache/ThreadPool.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/leiyza/communicate/Message$FileMessage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/leiyza/communicate/Message$FileMessage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/leiyza/communicate/Message$ImageMessage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/leiyza/communicate/Message$ImageMessage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/leiyza/communicate/Message$MessageHead.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/leiyza/communicate/Message$MessageHead.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/leiyza/communicate/Message$TextMessage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/leiyza/communicate/Message$TextMessage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/leiyza/communicate/Message.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/leiyza/communicate/Message.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/leiyza/dao/UserStatusDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/leiyza/dao/UserStatusDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/leiyza/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/leiyza/model/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/leiyza/server/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/leiyza/server/Client.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/leiyza/server/ClientOnlineList.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/leiyza/server/ClientOnlineList.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/leiyza/server/ClientThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/leiyza/server/ClientThread.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/leiyza/server/Commands.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/leiyza/server/Commands.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/leiyza/server/Server.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/leiyza/server/Server.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/leiyza/server/ServiceProcess.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/leiyza/server/ServiceProcess.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/userMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/userMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/userStatusMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/userStatusMapper.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -56,6 +27,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -76,8 +48,9 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="project.structure.last.edited" value="Project" />
-    <property name="project.structure.proportion" value="0.0" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources" />
+    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
   </component>
@@ -125,6 +98,12 @@
       <updated>1576987811416</updated>
       <workItem from="1576987812731" duration="18715000" />
       <workItem from="1577009103572" duration="14636000" />
+      <workItem from="1577107070765" duration="313000" />
+      <workItem from="1577107887616" duration="62000" />
+      <workItem from="1577108016146" duration="316000" />
+      <workItem from="1577108425400" duration="3136000" />
+      <workItem from="1577112281850" duration="8000" />
+      <workItem from="1577112488795" duration="2877000" />
     </task>
     <servers />
   </component>
@@ -171,6 +150,16 @@
           <url>file://$PROJECT_DIR$/src/main/java/com/leiyza/cache/MsgWaitForUserToGetCacheMap.java</url>
           <line>29</line>
           <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/leiyza/dao/UserDao.java</url>
+          <line>19</line>
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/leiyza/server/ServiceProcess.java</url>
+          <line>167</line>
+          <option name="timeStamp" value="19" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/com/leiyza/cache/MsgWaitForUserToGetCacheMap.java</url>

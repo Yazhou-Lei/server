@@ -171,6 +171,7 @@ public class ServiceProcess {
                 logger.info("register succeed!");
             }catch (Exception e){
                 logger.info("register failed!");
+                e.printStackTrace();
                 messageHead.setSuccessFlag(false);
                 textMessage.setMessageContent("注册失败，请联系管理员！");
             }
